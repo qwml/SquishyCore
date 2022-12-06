@@ -1,0 +1,263 @@
+#
+#
+#
+#         SquishyCore - For my own server :)
+#                 Coded by Jayie.
+#
+#
+#
+
+##############################################
+#                                            #
+#             Database Settings              #
+#                                            #
+##############################################
+
+Database:
+  address: 'localhost'
+  port: '3306'
+  username: 'root'
+  password: 'error404'
+  dbName: 'squishycore_db'
+
+##############################################
+#                                            #
+#           Join Messages Settings           #
+#                                            #
+##############################################
+
+JoinMessages:
+  Messages:
+    Staff:
+      # If SilentJoin is true, staff messages will not be displayed.
+      SilentJoin: true
+      # If SendToStaff is true, staff messages will still be displayed for staff even with silentjoin on.
+      SendToStaff: true
+      Join: '&c&lSTAFF &c%player% has joined the server.'
+      Leave: '&c&lSTAFF &c%player% has left the server.'
+    Donator:
+      Join: '&d&lSQUISHY &b&l%player% &fhas joined the server.'
+      Leave: '&d&lSQUISHY &b&l%player% &fhas left the server.'
+    Player:
+      Welcome: '&d&lWELCOME &f%player%'
+      Join: '&a&l+ &f%player%'
+      Leave: '&c&l+ &f%player%'
+
+
+##############################################
+#                                            #
+#             StaffCore Settings             #
+#                                            #
+##############################################
+
+StaffCore:
+  StaffChat:
+    Permission: 'squishycore.staffchat'
+    Format: '&8[&2Staff&8] &a%player%&8: &a%s'
+  StaffMode:
+    Permission: 'squishycore.staffmode'
+    Items:
+      Vanish:
+        Enabled: true
+        Material: 'ENDERPEARL'
+
+
+##############################################
+#                                            #
+#            MorphTools Settings             #
+#                                            #
+##############################################
+
+MorphTools:
+  GUI:
+    Filler: WHITE_STAINED_GLASS_PANE
+    Title: '&dMorph Tools.'
+  Pickaxe:
+    Material: 'NETHERITE_PICKAXE'
+    Name: '&dMorph Pickaxe'
+    Lore:
+      - '&f&m-+--------------------------------+-'
+      - ''
+      - '&5Morph Tools can be changed to a'
+      - '&ePickaxe, &aAxe, &3FishingRod, &6Hoe &7and &fSpade.'
+      - '&dShift + Right Click to Open Menu.'
+      - ''
+      - '&dPurchase Morph Tools @ /buy!'
+      - ''
+      - '&f&m-+--------------------------------+-'
+    Unbreakable: true
+    Enchants:
+      - 'DIG_SPEED'
+      - 'DURABILITY'
+  Silk:
+    Material: 'NETHERITE_PICKAXE'
+    Name: '&cMorph Pickaxe'
+    Lore:
+      - '&f&m-+--------------------------------+-'
+      - ''
+      - '&5Morph Tools can be changed to a'
+      - '&ePickaxe, &aAxe, &3FishingRod, &6Hoe &7and &fSpade.'
+      - '&dShift + Right Click to Open Menu.'
+      - ''
+      - '&dPurchase Morph Tools @ /buy!'
+      - ''
+      - '&f&m-+--------------------------------+-'
+    Unbreakable: true
+    Enchants:
+      - 'SILK_TOUCH'
+      - 'DIG_SPEED'
+      - 'DURABILITY'
+  Axe:
+    Material: 'NETHERITE_AXE'
+    Name: '&cMorph Axe'
+    Lore:
+      - '&f&m-+--------------------------------+-'
+      - ''
+      - '&5Morph Tools can be changed to a'
+      - '&ePickaxe, &aAxe, &3FishingRod, &6Hoe &7and &fSpade.'
+      - '&dShift + Right Click to Open Menu.'
+      - ''
+      - '&dPurchase Morph Tools @ /buy!'
+      - ''
+      - '&f&m-+--------------------------------+-'
+    Unbreakable: true
+    Enchants:
+      - 'DIG_SPEED'
+      - 'DURABILITY'
+  Spade:
+    Material: 'NETHERITE_SHOVEL'
+    Name: '&cMorph Shovel'
+    Lore:
+      - '&f&m-+--------------------------------+-'
+      - ''
+      - '&5Morph Tools can be changed to a'
+      - '&ePickaxe, &aAxe, &3FishingRod, &6Hoe &7and &fSpade.'
+      - '&dShift + Right Click to Open Menu.'
+      - ''
+      - '&dPurchase Morph Tools @ /buy!'
+      - ''
+      - '&f&m-+--------------------------------+-'
+    Unbreakable: true
+    Enchants:
+      - 'DIG_SPEED'
+      - 'DURABILITY'
+  FishingRod:
+    Material: 'FISHING_ROD'
+    Name: '&cMorph Rod'
+    Lore:
+      - '&f&m-+--------------------------------+-'
+      - ''
+      - '&5Morph Tools can be changed to a'
+      - '&ePickaxe, &aAxe, &3FishingRod, &6Hoe &7and &fSpade.'
+      - '&dShift + Right Click to Open Menu.'
+      - ''
+      - '&dPurchase Morph Tools @ /buy!'
+      - ''
+      - '&f&m-+--------------------------------+-'
+    Unbreakable: true
+    Enchants:
+      - 'DURABILITY'
+  Hoe:
+    Material: 'NETHERITE_HOE'
+    Name: '&cMorph Hoe'
+    Lore:
+      - '&f&m-+--------------------------------+-'
+      - ''
+      - '&5Morph Tools can be changed to a'
+      - '&ePickaxe, &aAxe, &3FishingRod, &6Hoe &7and &fSpade.'
+      - '&dShift + Right Click to Open Menu.'
+      - ''
+      - '&dPurchase Morph Tools @ /buy!'
+      - ''
+      - '&f&m-+--------------------------------+-'
+    Unbreakable: true
+    Enchants:
+      - 'DURABILITY'
+
+##############################################
+#                                            #
+#             ChatColor Settings             #
+#                                            #
+##############################################
+
+
+##############################################
+#                                            #
+#           CommandBlocker Settings          #
+#                                            #
+##############################################
+
+CommandBlocker:
+  BlockedCommands:
+    - 'pl'
+    - 'bukkit:pl'
+    - 'about'
+    - 'bukkit:about'
+    - 'ver'
+    - 'version'
+    - 'plugins'
+  Message: '&8[&cCommands&8] &cYou may not use this command.'
+
+
+##############################################
+#                                            #
+#             pvpToggle Settings             #
+#                                            #
+##############################################
+pvptoggle:
+  Messages:
+    Toggle: '&8[&cPVP&8] &aYou toggled pvp %status%.'
+    HitMessage: '&8[&cPVP&8] &cYou cannot hit someone with pvp turned off.'
+
+##############################################
+#                                            #
+#              Quests Settings               #
+#                                            #
+##############################################
+
+Quests:
+  Daily:
+    Mining:
+      AmountOfBlocks: '2500'
+      Rewards:
+        # all rewards are command based.
+        - ''
+    MobFarming:
+      AmountOfMobs: '2500'
+      Rewards:
+        - ''
+    BlockPlacing:
+      AmountOfBlocks: '2500'
+      Rewards:
+        - ''
+    Farming:
+      AmountOfCrops: '2500'
+      Rewards:
+        - ''
+    Fishing:
+      AmountOfFish: '2500'
+      Rewards:
+        - ''
+  Repeatable:
+    Mining:
+      AmountOfBlocks: '500'
+      Rewards:
+        # all rewards are command based.
+        - ''
+    MobFarming:
+      AmountOfMobs: '500'
+      Rewards:
+        - ''
+    BlockPlacing:
+      AmountOfBlocks: '500'
+      Rewards:
+        - ''
+    Farming:
+      AmountOfCrops: '500'
+      Rewards:
+        - ''
+    Fishing:
+      AmountOfFish: '500'
+      Rewards:
+          - ''
+

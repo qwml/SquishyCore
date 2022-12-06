@@ -1,0 +1,17 @@
+name: SquishyCore
+version: '${project.version}'
+main: me.jay.squishycore.SquishyCore
+api-version: 1.19
+authors: [ Jay ]
+description: Core for SquishyCore Server
+commands:
+  sc:
+    description: Staffchat
+    aliases: [staffchat, scsc]
+  morphtool:
+    description: gives a morphtool
+    aliases: [mt]
+  pvp:
+    description: toggle pvp
+    aliases: [p]
+
