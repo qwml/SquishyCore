@@ -240,24 +240,27 @@ Quests:
         - ''
   Repeatable:
     Mining:
-      AmountOfBlocks: '500'
+      AmountOfBlocks: 500
+      Message: '&8[&5Quests&8] &fYou have mined &d&l%amountofblocks% &fBlocks!'
       Rewards:
         # all rewards are command based.
-        - ''
+        - 'eco give %player% 500'
     MobFarming:
       AmountOfMobs: '500'
       Rewards:
-        - ''
+        - 'eco give %player% 500'
     BlockPlacing:
       AmountOfBlocks: '500'
       Rewards:
-        - ''
+        - 'eco give %player% 500'
     Farming:
       AmountOfCrops: '500'
+      Message: '&8[&5Quests&8] &fYou have caught &d&l%amountofcrops% &ffish!'
       Rewards:
-        - ''
+        - 'eco give %player% 500'
     Fishing:
       AmountOfFish: '500'
+      Message: '&8[&5Quests&8] &fYou have caught &d&l%amountoffish% &ffish!'
       Rewards:
-          - ''
+        - 'eco give %player% 500'
 
