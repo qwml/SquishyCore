@@ -39,7 +39,7 @@ public class dbQ {
     public boolean doesPlayerExist(Player player) throws SQLException{
         UUID uuid = player.getUniqueId();
 
-        PreparedStatement ps1 = plugin.DB.getConnection().prepareStatement("SELECT * FROM pronouns WHERE playerUUID=?");
+        PreparedStatement ps1 = plugin.DB.getConnection().prepareStatement("SELECT * FROM quests WHERE playerUUID=?");
         ps1.setString(1, String.valueOf(uuid));
         ResultSet rs1 = ps1.executeQuery();
         if (rs1.next()){

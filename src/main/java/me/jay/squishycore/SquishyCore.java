@@ -25,6 +25,8 @@ public final class SquishyCore extends JavaPlugin implements Listener {
 
     public HashMap<UUID, String> toggledON = new HashMap<>();
 
+    public Integer amountofblocks = 0;
+
     public db DB;
     public dbQ DBQ;
 
@@ -38,6 +40,7 @@ public final class SquishyCore extends JavaPlugin implements Listener {
         getServer().getPluginManager().registerEvents(new blockedCommands(this), this);
         getServer().getPluginManager().registerEvents(new pvptoggleEvent(this), this);
         getServer().getPluginManager().registerEvents(new miningQuest(this), this);
+        getServer().getPluginManager().registerEvents(this, this);
         getCommand("morphtool").setExecutor(new morphCommand());
         getCommand("pvp").setExecutor(new pvptoggleCommand(this));
         config();
@@ -76,16 +79,7 @@ public final class SquishyCore extends JavaPlugin implements Listener {
     @EventHandler
     public void onjoin(PlayerJoinEvent e) throws SQLException {
 
-        if (DB.isConnected()) {
-            DBQ.createPlayer(e.getPlayer());
-        }else{
-            try{
-                DB.connect();
-                DBQ.createPlayer(e.getPlayer());
-            }catch (SQLException exception){
-                exception.printStackTrace();
-            }
-        }
+        DBQ.createPlayer(e.getPlayer());
 
     }
 

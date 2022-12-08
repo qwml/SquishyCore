@@ -2,6 +2,8 @@ package me.jay.squishycore.pvpToggle;
 
 import me.jay.squishycore.SquishyCore;
 import org.bukkit.ChatColor;
+import org.bukkit.entity.EntityType;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
@@ -19,17 +21,20 @@ public class pvptoggleEvent implements Listener {
     }
 
     @EventHandler
-    public void onPvp(EntityDamageByEntityEvent e){
+    public void onPvp(EntityDamageByEntityEvent e) {
 
-        if (!plugin.toggledON.containsKey(e.getDamager().getUniqueId())){
+        if (e.getEntity().getType().equals(EntityType.PLAYER)) {
+
+            if (!plugin.toggledON.containsKey(e.getDamager().getUniqueId()) || !plugin.toggledON.containsKey(e.getEntity().getUniqueId())) {
 
 
-            e.setCancelled(true);
-            e.getDamager().sendMessage(Color(plugin.getConfig().getString("pvptoggle.Messages.HitMessage")));
+                e.setCancelled(true);
+                e.getDamager().sendMessage(Color(plugin.getConfig().getString("pvptoggle.Messages.HitMessage")));
 
+
+            }
 
         }
-
     }
 
     @EventHandler
