@@ -11,10 +11,13 @@ import me.jay.squishycore.pvpToggle.pvptoggleCommand;
 import me.jay.squishycore.pvpToggle.pvptoggleEvent;
 import me.jay.squishycore.quests.miningQuest;
 import me.jay.squishycore.staffCore.staffChat;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.sql.SQLException;
@@ -87,6 +90,14 @@ public final class SquishyCore extends JavaPlugin implements Listener {
             }
         }
 
+        DBQ.playtimesSetLastjoin(e.getPlayer());
+
+    }
+
+    @EventHandler
+    public void onLeave(PlayerQuitEvent e) throws SQLException {
+        Player player = e.getPlayer();
+        DBQ.playtimePlayerLeaveHandler(player);
     }
 
 }
