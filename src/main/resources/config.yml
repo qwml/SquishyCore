@@ -245,22 +245,27 @@ Quests:
       Rewards:
         # all rewards are command based.
         - 'eco give %player% 500'
-    MobFarming:
-      AmountOfMobs: '500'
+    MobKiller:
+      AmountOfMobs: 500
+      Message: '&8[&5Quests&8] &fYou have killed &d&l%amountofmobs% &fmobs!'
       Rewards:
         - 'eco give %player% 500'
     BlockPlacing:
-      AmountOfBlocks: '500'
+      AmountOfBlocks: 500
+      Message: '&8[&5Quests&8] &fYou have placed &d&l%amountofblocks% &fBlocks!'
       Rewards:
         - 'eco give %player% 500'
     Farming:
-      AmountOfCrops: '500'
+      AmountOfCrops: 500
       Message: '&8[&5Quests&8] &fYou have caught &d&l%amountofcrops% &ffish!'
       Rewards:
         - 'eco give %player% 500'
     Fishing:
-      AmountOfFish: '500'
+      AmountOfFish: 500
       Message: '&8[&5Quests&8] &fYou have caught &d&l%amountoffish% &ffish!'
       Rewards:
         - 'eco give %player% 500'
-
+    PlayTime:
+      # In seconds.
+      AmountOfTime: 3600
+      Message: '&8[&5Quests&8] &fYou have played for &d&l%amountoftime% &fminutes !'

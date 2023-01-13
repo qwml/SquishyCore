@@ -40,10 +40,17 @@ public class placeholderAPI extends PlaceholderExpansion {
             }else{
                 Toggle = "PVP DISABLED";
             }
-        }else if (params.equalsIgnoreCase("amountofblocks")){
+        }else if (params.equalsIgnoreCase("amountofblocksmined")){
             return plugin.amountofblocks.toString();
+        }else if (params.equalsIgnoreCase("amountofmobs")) {
+            return plugin.amountofmobs.toString();
+        }else if (params.equalsIgnoreCase("amountofblocksplaced")){
+            return plugin.amountofblocksplaced.toString();
+        }else if (params.equalsIgnoreCase("amountoffish")){
+            return plugin.amountoffish.toString();
+        }else if (params.equalsIgnoreCase("amountofcrops")){
+            return plugin.amountofcrops.toString();
         }
-
         return null; // Placeholder is unknown by the Expansion
     }
 }

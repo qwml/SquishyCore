@@ -9,7 +9,7 @@ import me.jay.squishycore.morphTools.morphEvent;
 import me.jay.squishycore.placeHolders.placeholderAPI;
 import me.jay.squishycore.pvpToggle.pvptoggleCommand;
 import me.jay.squishycore.pvpToggle.pvptoggleEvent;
-import me.jay.squishycore.quests.miningQuest;
+import me.jay.squishycore.quests.*;
 import me.jay.squishycore.staffCore.staffChat;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -29,6 +29,10 @@ public final class SquishyCore extends JavaPlugin implements Listener {
     public HashMap<UUID, String> toggledON = new HashMap<>();
 
     public Integer amountofblocks = 0;
+    public Integer amountofmobs = 0;
+    public Integer amountofblocksplaced = 0;
+    public Integer amountoffish = 0;
+    public Integer amountofcrops =0;
 
     public db DB;
     public dbQ DBQ;
@@ -44,7 +48,13 @@ public final class SquishyCore extends JavaPlugin implements Listener {
         getServer().getPluginManager().registerEvents(new pvptoggleEvent(this), this);
         getServer().getPluginManager().registerEvents(new miningQuest(this), this);
         getServer().getPluginManager().registerEvents(this, this);
+        getServer().getPluginManager().registerEvents(new farmingQuest(this), this);
+        getServer().getPluginManager().registerEvents(new questListener(), this);
+        getServer().getPluginManager().registerEvents(new blockPlaceQuest(this), this);
+        getServer().getPluginManager().registerEvents(new fishingQuest(this), this);
+        getServer().getPluginManager().registerEvents(new mobKillingEvent(this), this);
         getCommand("morphtool").setExecutor(new morphCommand());
+        getCommand("quests").setExecutor(new questCommands(this));
         getCommand("pvp").setExecutor(new pvptoggleCommand(this));
         config();
         /*h2Database.initializeData();*/

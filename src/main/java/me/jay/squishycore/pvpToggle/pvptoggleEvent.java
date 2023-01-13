@@ -25,13 +25,16 @@ public class pvptoggleEvent implements Listener {
 
         if (e.getEntity().getType().equals(EntityType.PLAYER)) {
 
-            if (!plugin.toggledON.containsKey(e.getDamager().getUniqueId()) || !plugin.toggledON.containsKey(e.getEntity().getUniqueId())) {
+            if (e.getDamager().getType() == EntityType.PLAYER){
+
+                if (!plugin.toggledON.containsKey(e.getDamager().getUniqueId()) || !plugin.toggledON.containsKey(e.getEntity().getUniqueId())) {
 
 
-                e.setCancelled(true);
-                e.getDamager().sendMessage(Color(plugin.getConfig().getString("pvptoggle.Messages.HitMessage")));
+                    e.setCancelled(true);
+                    e.getDamager().sendMessage(Color(plugin.getConfig().getString("pvptoggle.Messages.HitMessage")));
 
 
+                }
             }
 
         }

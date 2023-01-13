@@ -22,6 +22,8 @@ public class dbQ {
         table.executeUpdate();
         PreparedStatement playtimesTable = plugin.DB.getConnection().prepareStatement("CREATE TABLE IF NOT EXISTS playtimes(playerUUID varchar(255), seconds BIGINT, lastjoinTime BIGINT, PRIMARY KEY(playerUUID))");
         playtimesTable.executeUpdate();
+        PreparedStatement pwarpTable = plugin.DB.getConnection().prepareStatement("CREATE TABLE IF NOT EXISTS pwarps(warpID int NOT NULL AUTO_INCREMENT, playerUUID varchar(255), warpName varchar(255), location varchar(255), PRIMARY KEY(warpID))");
+        pwarpTable.executeUpdate();
     }
 
     public void createPlayer(Player player) throws SQLException {
@@ -86,8 +88,13 @@ public class dbQ {
             long playerPlaytime = unixTimestamp - playerJoinTimestamp;
             long playerTotalPlaytime = playerSeconds + playerPlaytime;
             PreparedStatement updatePlaytimeRow = plugin.DB.getConnection().prepareStatement("UPDATE playtimes SET seconds = ? WHERE playerUUID = ?");
-            updatePlaytimeRow.setLong(1, playerTotalPlaytime);
-            updatePlaytimeRow.setString(2, uuid.toString());
+            if(rs1.getLong("seconds") != 3600) {
+                updatePlaytimeRow.setLong(1, playerTotalPlaytime);
+                updatePlaytimeRow.setString(2, uuid.toString());
+            }else{
+                updatePlaytimeRow.setLong(1, 0);
+                updatePlaytimeRow.setString(2, uuid.toString());
+            }
             updatePlaytimeRow.executeUpdate();
         }
     }
