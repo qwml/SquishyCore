@@ -14,7 +14,5 @@ commands:
   pvp:
     description: toggle pvp
     aliases: [p]
-  quests:
-    description: Quests gui to show progress.
-    aliases: [quest, q, squishycorequests]
+
 
