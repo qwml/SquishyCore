@@ -204,6 +204,7 @@ CommandBlocker:
 #             pvpToggle Settings             #
 #                                            #
 ##############################################
+
 pvptoggle:
   Messages:
     Toggle: '&8[&cPVP&8] &aYou toggled pvp %status%.'
